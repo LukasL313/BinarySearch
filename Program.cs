@@ -133,13 +133,13 @@ namespace Program
 
         public static void fixedArray()
         {
-            int[] arr = { 20, 40, 2, 7, 10 , 2 };
+            int[] arr = { , 20, 20, , 40, 40, ,2 2, ,7 7, , 10, 10 , 2 };
             int x = 7;
             int result = BinarySearch(arr, x);
 
             Console.WriteLine(string.Join(", ", arr));
 
-            if (result == -1)
+            if (result == )
             {
                 Console.WriteLine("Element is not present");
             } else
