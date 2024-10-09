@@ -42,7 +42,7 @@ namespace Program
            return -1;
         } 
         
-        // ---------------------------------------------------------
+      // ---------------------------------------------------------
 
          public static int FirstOcc(int[] arr, int x)
          {
@@ -111,41 +111,39 @@ namespace Program
          public static void RdmArray()
           {
            Random Rdm = new Random();
-           int x = 5;
-           int[] RdmArray = new int[10];
+           int x = 3;
+           int[] RdmArray = new int[1000];
            for (int i = 0; i < RdmArray.Length; i++)
            {
-              RdmArray[i] = Rdm.Next(1,7);
+              RdmArray[i] = Rdm.Next(1,10);
            }
 
            Array.Sort(RdmArray);
            int result = AllOcc(RdmArray, x);
 
-           Console.WriteLine(string.Join(", ", RdmArray));
+           Console.WriteLine(string.Join(", ", RdmArray ));
            if(result == 0)
            {
-             Console.WriteLine($"Element {x} is not present.");
+             Console.WriteLine($"\nElement {x} is not present.\n");
            } else {
-             Console.WriteLine($"Element {x} is present {result} times.");
+             Console.WriteLine($"\nElement {x} is present {result} time.\n");
            }
-
         }  
 
         public static void fixedArray()
         {
-            int[] arr = { , 20, 20, , 40, 40, ,2 2, ,7 7, , 10, 10 , 2 };
-            int x = 7;
-            int result = BinarySearch(arr, x);
+            int[] arr = { 20, 20, 40, 40, 40, 42, 22, 42, 64 };
+            int x = 40;
 
-            Console.WriteLine(string.Join(", ", arr));
+           int result = AllOcc(arr, x);
 
-            if (result == )
-            {
-                Console.WriteLine("Element is not present");
-            } else
-            {
-                    Console.WriteLine("Element is present at " + "index " + result);
-            }
+           Console.WriteLine(string.Join(", ", arr));
+           if(result == 0)
+           {
+             Console.WriteLine($"\nElement {x} is not present.\n");
+           } else {
+             Console.WriteLine($"\nElement {x} is present {result} time.\n");
+           }
         }
 
         public static void Main(string[] args)
