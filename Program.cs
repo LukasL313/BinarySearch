@@ -8,24 +8,38 @@ namespace Program
 {
     class Program
     {
-        public static int Binary(int[] arr, int x)
+        public static int BinarySearch(int[] arr, int x)
         {
-           int low = 0, high = arr.Length -1;
+          // Low = Første tallet i arrayen,
+          // high = mengden elementer i array -1
+
+           int low = 0;
+           int high = arr.Length -1;
            while (low <= high)
            {
+
+            // Formel for å finne midten, for å vite hvor binær algoritme skal søke.
+            // Denne formellen er bedre enn low + ( high + low ) / 2; fordi det kan skape integer overflow,
+            // Når vi jobber med store mengder av tall i en array.
+            // https://research.google/blog/extra-extra-read-all-about-it-nearly-all-binary-searches-and-mergesorts-are-broken/
+
              int mid = low + ( high - low) / 2;
+            
+            // Søke logikk 
 
              if (arr[mid] == x)
              return mid;
 
              if (arr[mid] < x)
              low = mid + 1;
-
-             if (arr[mid] > x)
+             else 
              high = mid - 1;
            }
            return -1;
-        }
+        } 
+
+        
+         // Juster binærsøkeren til å finne flere av det samme elemente 
 
          public static void RdmArray()
         {
@@ -38,7 +52,7 @@ namespace Program
            }
 
            Array.Sort(RdmArray);
-           int result = Binary(RdmArray, x);
+           int result = BinarySearch(RdmArray, x);
 
            Console.WriteLine(string.Join(", ", RdmArray));
            if(result == -1)

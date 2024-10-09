@@ -12,3 +12,4 @@
 /Users/lukaslarsen/BinarySearch/BinarySearch/obj/Debug/net8.0/BinarySearch.pdb
 /Users/lukaslarsen/BinarySearch/BinarySearch/obj/Debug/net8.0/BinarySearch.genruntimeconfig.cache
 /Users/lukaslarsen/BinarySearch/BinarySearch/obj/Debug/net8.0/ref/BinarySearch.dll
+/Users/lukaslarsen/BinarySearch/BinarySearch/obj/Debug/net8.0/BinarySearch.sourcelink.json
