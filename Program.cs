@@ -48,7 +48,7 @@ namespace Program
          {
            int low = 0;
            int high = arr.Length -1;
-           int result = -1;
+           int location = -1;
            
 
            while (low <= high) 
@@ -57,24 +57,24 @@ namespace Program
                
                 if (arr[mid] == x)
                 {
-                  result = mid;
+                  location = mid;
                   high = mid - 1;
                 } else if (arr[mid] < x)
                 {
-                  low = mid + 1;
+                  low = mid +1;
                 } else
                 {
                   high = mid - 1;
                 }
                }  
-               return result;
+               return location;
            }
          
          public static int LastOcc(int[] arr, int x)
          {
           int low = 0;
           int high = arr.Length -1;
-          int result = -1;
+          int location = -1;
 
           while (low <= high)
           {
@@ -82,7 +82,7 @@ namespace Program
             
                 if (arr[mid] == x)
                 {
-                  result = mid;
+                  location = mid;
                   low = mid + 1;
                 } else if (arr[mid] > x)
                 {
@@ -92,9 +92,11 @@ namespace Program
                   low = mid + 1;
                 }
                }  
-               return result;
-          }  
+               return location;
+             }  
          
+         // Viser bare hvor mange tallet kommer opp, men ikke indexen av tallene. 
+         // Lag en løsning til å vise indexen rangeringen av tallene i tillegg.
          public static int AllOcc(int[] arr, int x)
          {
            int FirstOccuerence = FirstOcc(arr, x);
@@ -102,35 +104,34 @@ namespace Program
            {
              return 0;
            } 
-           
-           int LastOccuerence = LastOcc(arr, x);
-
+           int LastOccuerence = LastOcc(arr, x); 
            return LastOccuerence - FirstOccuerence + 1;
          }
-  
-         public static void RdmArray()
+
+         public static void RdmArray() 
           {
-           Random Rdm = new Random();
-           int x = 3;
+           Random Rdm = new Random(); 
+           int x = 9;
            int[] RdmArray = new int[1000];
            for (int i = 0; i < RdmArray.Length; i++)
            {
-              RdmArray[i] = Rdm.Next(1,10);
+              RdmArray[i] = Rdm.Next(1,50);
            }
-
            Array.Sort(RdmArray);
            int result = AllOcc(RdmArray, x);
-
+          
            Console.WriteLine(string.Join(", ", RdmArray ));
            if(result == 0)
            {
              Console.WriteLine($"\nElement {x} is not present.\n");
            } else {
-             Console.WriteLine($"\nElement {x} is present {result} time.\n");
+             Console.WriteLine($"\nElement {x} is present {result} time");
+             
+      
            }
         }  
 
-        public static void fixedArray()
+       /* public static void fixedArray()
         {
             int[] arr = { 20, 20, 40, 40, 40, 42, 22, 42, 64 };
             int x = 40;
@@ -144,12 +145,11 @@ namespace Program
            } else {
              Console.WriteLine($"\nElement {x} is present {result} time.\n");
            }
-        }
+        } */
 
         public static void Main(string[] args)
         { 
             RdmArray();
-            fixedArray();
         }
     }
 }
