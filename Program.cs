@@ -42,9 +42,7 @@ namespace Program
            return -1;
         } 
         
-      // ---------------------------------------------------------
-
-
+     // ---------------------------------------------------------
      // Bruker to binære søkere til å finne alle hendelsene av tallet X,
      // F.eks av output
      // Sjekker at Element X eksisterer, deretter sjekker hvor mange av X eksisterer. 
@@ -79,7 +77,7 @@ namespace Program
          public static int LastOcc(int[] arr, int x)
          {
           int low = 0;
-          int high = arr.Length -1;
+          int high = arr.Length - 1;
           int location = -1;
 
           while (low <= high)
@@ -101,70 +99,56 @@ namespace Program
                return location;
              }  
 
-         // ______________________________________________________________________
-         // Funksjonen allOcc intaliserer begge av binær søkerene med verdier,
-         // Returnerer alle hendelser av X.  
-         // ______________________________________________________________________
-
          public static int AllOcc(int[] arr, int x) 
          {
            int FirstOccuerence = FirstOcc(arr, x);
-           if (FirstOccuerence == -1)
-           {
-             return 0;
-           }
+    
            int LastOccuerence = LastOcc(arr, x); 
-
-           return LastOccuerence - FirstOccuerence + 1;
+          
+           return LastOccuerence - FirstOccuerence;
          }
 
-         public static void RdmArray() 
+         public static void IndexRange(int[] arr, int x)
+         {
+           int firstIndex = FirstOcc(arr, x);
+           int lastIndex = LastOcc(arr, x);
+            
+           Console.WriteLine($"\nIndex rangeringen er {firstIndex} til {lastIndex} \n");
+         }
+          
+
+         public static int[] RdmArray() 
           {
+
            Random Rdm = new Random(); 
-           int x = 42;
            int[] RdmArray = new int[1000];
            for (int i = 0; i < RdmArray.Length; i++)
            {
-              RdmArray[i] = Rdm.Next(1,50);
+              RdmArray[i] = Rdm.Next(1,30);
            }
            Array.Sort(RdmArray);
-           // For å sjekke om X eksisterer, og hvor mange av X eksisterer. 
-           int result = AllOcc(RdmArray, x);
-           // Sjekker index rangering av tallene i tabellen. 
-           int firstIndex = FirstOcc(RdmArray, x);
-           int lastIndex = LastOcc(RdmArray, x);
-           
-           Console.WriteLine(string.Join(", ", RdmArray ));
-           if(result == 0)
-           {
-             Console.WriteLine($"\nElement {x} is not present.\n");
-  
-           } else 
-           {
-             Console.WriteLine($"\nElement {x} is present {result} times");
-             Console.WriteLine($"\nIndex range is {firstIndex} to {lastIndex} \n");
-           }
+           Console.WriteLine(string.Join(", ", RdmArray));
+
+            return RdmArray;
         }  
-
-       /* public static void fixedArray()
-        {
-            int[] arr = { 20, 20, 40, 40, 40, 42, 22, 42, 64 };
-            int x = 40;
-
-           int result = AllOcc(arr, x);
-
-           Console.WriteLine(string.Join(", ", arr));
-           if(result == 0)
-           {
-             Console.WriteLine($"\nElement {x} is not present.\n");
-           } else {
-             Console.WriteLine($"\nElement {x} is present {result} time.\n");
-           }
-        } */
 
         public static void Main(string[] args)
         { 
-            RdmArray();
+          int x = 7;
+          int[] arr = RdmArray();
+
+          // For å sjekke om X eksisterer, og hvor mange av X eksisterer. 
+           int result = AllOcc(arr, x);
+           // Sjekker index rangering av tallene i tabellen. 
+
+            if(result == 0)
+           { 
+               Console.WriteLine($"\nElemente {x} eksisteres ikke i denne tabellen.\n");
+           } else 
+           {
+             Console.WriteLine($"\nElemente {x} eksisterer i denne tabellen,\nog finnes {result} ganger i tabellen.");
+             IndexRange(arr, x);
+           }
         }
     }
 }
