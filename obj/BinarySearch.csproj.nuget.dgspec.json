@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lukaslarsen/BinarySearch-2/BinarySearch.csproj": {}
+    "/Users/lukaslarsen/BinarySearch-3/BinarySearch.csproj": {}
   },
   "projects": {
-    "/Users/lukaslarsen/BinarySearch-2/BinarySearch.csproj": {
+    "/Users/lukaslarsen/BinarySearch-3/BinarySearch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lukaslarsen/BinarySearch-2/BinarySearch.csproj",
+        "projectUniqueName": "/Users/lukaslarsen/BinarySearch-3/BinarySearch.csproj",
         "projectName": "BinarySearch",
-        "projectPath": "/Users/lukaslarsen/BinarySearch-2/BinarySearch.csproj",
+        "projectPath": "/Users/lukaslarsen/BinarySearch-3/BinarySearch.csproj",
         "packagesPath": "/Users/lukaslarsen/.nuget/packages/",
-        "outputPath": "/Users/lukaslarsen/BinarySearch-2/obj/",
+        "outputPath": "/Users/lukaslarsen/BinarySearch-3/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/lukaslarsen/.nuget/NuGet/NuGet.Config"

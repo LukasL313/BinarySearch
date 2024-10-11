@@ -8,7 +8,7 @@ namespace Program
 {
     class Program
     {
-
+      // Ignore denne delen
       // ---------------------------------------------------------
       // Tar i utgangspunkt denne modellen. 
 
@@ -58,6 +58,7 @@ namespace Program
 
            while (low <= high) 
            {
+  
               int mid = low + (high - low) / 2;
                
                 if (arr[mid] == x)
@@ -103,7 +104,6 @@ namespace Program
          // ______________________________________________________________________
          // Funksjonen allOcc intaliserer begge av binær søkerene med verdier,
          // Returnerer alle hendelser av X.  
-         // Mål: Metode som i tillegg viser index rangering av tallene. 
          // ______________________________________________________________________
 
          public static int AllOcc(int[] arr, int x) 
@@ -112,30 +112,37 @@ namespace Program
            if (FirstOccuerence == -1)
            {
              return 0;
-           } 
+           }
            int LastOccuerence = LastOcc(arr, x); 
+
            return LastOccuerence - FirstOccuerence + 1;
          }
 
          public static void RdmArray() 
           {
            Random Rdm = new Random(); 
-           int x = 9;
+           int x = 42;
            int[] RdmArray = new int[1000];
            for (int i = 0; i < RdmArray.Length; i++)
            {
               RdmArray[i] = Rdm.Next(1,50);
            }
            Array.Sort(RdmArray);
+           // For å sjekke om X eksisterer, og hvor mange av X eksisterer. 
            int result = AllOcc(RdmArray, x);
-          
+           // Sjekker index rangering av tallene i tabellen. 
+           int firstIndex = FirstOcc(RdmArray, x);
+           int lastIndex = LastOcc(RdmArray, x);
+           
            Console.WriteLine(string.Join(", ", RdmArray ));
            if(result == 0)
            {
              Console.WriteLine($"\nElement {x} is not present.\n");
+  
            } else 
            {
-             Console.WriteLine($"\nElement {x} is present {result} time");
+             Console.WriteLine($"\nElement {x} is present {result} times");
+             Console.WriteLine($"\nIndex range is {firstIndex} to {lastIndex} \n");
            }
         }  
 
