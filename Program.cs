@@ -16,7 +16,7 @@ namespace Program
         {
           // Low = Første tallet i arrayen,
           // high = mengden elementer i array -1
-
+          
            int low = 0;
            int high = arr.Length -1;
            while (low <= high)
@@ -99,7 +99,7 @@ namespace Program
                }  
                return location;
              }  
-             
+
          // ______________________________________________________________________
          // Funksjonen allOcc intaliserer begge av binær søkerene med verdier,
          // Returnerer alle hendelser av X.  
