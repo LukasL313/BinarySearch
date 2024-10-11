@@ -44,6 +44,11 @@ namespace Program
         
       // ---------------------------------------------------------
 
+
+     // Bruker to binære søkere til å finne alle hendelsene av tallet X,
+     // F.eks av output
+     // Sjekker at Element X eksisterer, deretter sjekker hvor mange av X eksisterer. 
+
          public static int FirstOcc(int[] arr, int x)
          {
            int low = 0;
@@ -94,10 +99,14 @@ namespace Program
                }  
                return location;
              }  
-         
-         // Viser bare hvor mange tallet kommer opp, men ikke indexen av tallene. 
-         // Lag en løsning til å vise indexen rangeringen av tallene i tillegg.
-         public static int AllOcc(int[] arr, int x)
+             
+         // ______________________________________________________________________
+         // Funksjonen allOcc intaliserer begge av binær søkerene med verdier,
+         // Returnerer alle hendelser av X.  
+         // Mål: Metode som i tillegg viser index rangering av tallene. 
+         // ______________________________________________________________________
+
+         public static int AllOcc(int[] arr, int x) 
          {
            int FirstOccuerence = FirstOcc(arr, x);
            if (FirstOccuerence == -1)
@@ -124,10 +133,9 @@ namespace Program
            if(result == 0)
            {
              Console.WriteLine($"\nElement {x} is not present.\n");
-           } else {
+           } else 
+           {
              Console.WriteLine($"\nElement {x} is present {result} time");
-             
-      
            }
         }  
 
